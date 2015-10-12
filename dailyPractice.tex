@@ -1,0 +1,29 @@
+\documentclass[a4paper, 10pt]{article} % for A4 size paper
+\usepackage{tikz}
+% Calligraphic pen scale = 4.5 * 1.1mm = 
+% Cursive pen scale = 3
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+\tikzset{normal lines/.style={black, thin}} 
+
+\node at (current page.south west){
+  \begin{tikzpicture}[remember picture, overlay]
+    \foreach \y in {0.4, 0.8,...,10.2} 
+      \draw[style=normal lines](0,\y) -- (15cm, \y); 
+    \foreach \y in {11, 11.7,...,16.9}
+        \draw[style=normal lines](0,\y) -- (15cm, \y); 
+    \foreach \y in {11.25, 11.95,...,16.25}
+        \draw[style=normal lines](0,\y) -- (15cm, \y); 
+    \foreach \y in {17, 17.4,...,18.2}
+        \draw[style=normal lines](0,\y) -- (15cm, \y); 
+    \draw[style=normal lines](8cm, 19.5) -- (14cm,19.5);
+  \end{tikzpicture}
+};
+\end{tikzpicture}
+
+
+\end{document}
